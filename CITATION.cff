@@ -1,0 +1,16 @@
+cff-version: 1.2.0
+message: "If you use this code, please cite the accompanying manuscript."
+title: "cxr-weight-benchmark"
+abstract: "Benchmarking formula-based body-weight surrogates against portable chest radiography deep learning in the intensive care unit."
+authors:
+  - family-names: Yin
+    given-names: Mengjun
+  - family-names: Chen
+    given-names: Danlei
+  - family-names: Pan
+    given-names: Xuming
+    orcid: "https://orcid.org/0000-0002-2491-7396"
+year: 2026
+version: 1.0.0
+license: MIT
+repository-code: "https://github.com/iditor1993/cxr-weight-benchmark"

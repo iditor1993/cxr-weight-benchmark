@@ -1,0 +1,44 @@
+# ---- MIMIC / PhysioNet data: never commit patient-level or restricted data ----
+project/data/
+*.duckdb
+*.duckdb.wal
+*.dcm
+*.npy
+*.npz
+*.pt
+*.pth
+*.ckpt
+*.h5
+*.hdf5
+
+# Raw CXR caches / features
+project/data/features/
+project/data/interim/
+project/data/processed/
+
+# ---- Python ----
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.ipynb_checkpoints/
+
+# ---- R ----
+.Rhistory
+.RData
+.Rproj.user/
+
+# ---- OS / editor ----
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.log
+
+# ---- Cloud-sync temporary files (Baidu Netdisk) ----
+*.baiduyun.uploading.cfg
+*.baiduyun.downloading
+
+# ---- Copyrighted source PDFs (kept locally, not versioned) ----
+reference/*.pdf

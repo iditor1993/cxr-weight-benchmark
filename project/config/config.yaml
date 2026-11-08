@@ -1,0 +1,49 @@
+# CR_Weight 全局配置（与 研究方案_v4_定稿.md 对齐）
+project: CR_Weight
+plan_version: v4_final_2026-10-04
+
+data:
+  duckdb: "E:/clinical_research/MIMIC_IV_3.1/mimic_iv_3_1.duckdb"
+  cxr_root: "Z:/database/mimic-cxr_2.1.0"
+  output_dir: "project/data/processed"
+  feature_dir: "project/data/features"
+  results_dir: "project/results"
+
+cohort:
+  age_min: 18
+  view_position: "AP"
+  procedure_desc_like: "%PORTABLE%"
+  weight_item_daily: 224639
+  weight_item_admission_kg: 226512
+  weight_item_admission_lbs: 226531
+  weight_min_kg: 20.0
+  weight_max_kg: 350.0
+  primary_window_hours: 24
+  sensitivity_windows_hours: [6, 12, 48]
+
+image:
+  size_main: 320
+  size_sensitivity: 224
+  cache_dtype: "uint8"
+  percentile_low: 1.0
+  percentile_high: 99.0
+
+split:
+  seed: 20261004
+  ratios: [0.70, 0.15, 0.15]
+
+model:
+  seeds: [1, 2, 3]
+  batch_size: 32
+  epochs: 50
+  lr: 0.0003
+  weight_decay: 0.05
+  amp: true
+  early_stop_metric: "val_mae"
+
+success_criteria:
+  s1_hit_rate_within_10pct: 0.80
+  s2_mae_max_kg: 5.0
+  s2_ci_upper_max_kg: 6.0
+  s3_coverage_min: 0.85
+  s3_extreme_subgroup_hit_min: 0.65
